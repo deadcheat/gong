@@ -17,7 +17,17 @@ func (p *Provider) Provide(req types.AlexaRequest) (interfaces.Handler, error) {
 	case values.TypeLaunchRequest:
 		return &LaunchHandler{}, nil
 	case values.TypeIntentRequest:
-		return &IntentHandler{}, nil
+		i := req.Intent
+		if i != nil {
+			switch i.Name {
+			case values.IntentGongRing:
+				return &GongRingIntentHandler{}, nil
+			case values.IntentAMAZONHelpIntent:
+				return &HelpIntentHandler{}, nil
+			case values.IntentAMAZONCancelIntent, values.IntentAMAZONStopIntent:
+				return &SessionEndedHandler{}, nil
+			}
+		}
 	case values.TypeSessionEndedRequest:
 		return &SessionEndedHandler{}, nil
 	}

@@ -13,7 +13,10 @@ const (
 // const value of request.intent.name
 const (
 	// IntentGongRing const value of request.intent.name
-	IntentGongRing = "GongRing"
+	IntentGongRing           = "GongRing"
+	IntentAMAZONCancelIntent = "AMAZON.CancelIntent"
+	IntentAMAZONHelpIntent   = "AMAZON.HelpIntent"
+	IntentAMAZONStopIntent   = "AMAZON.StopIntent"
 )
 
 const (
