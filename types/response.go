@@ -2,16 +2,17 @@ package types
 
 type AlexaResponse struct {
 	Version           string                 `json:"version"`
-	SessionAttributes map[string]interface{} `json:"sessionAttributes"`
+	SessionAttributes map[string]interface{} `json:"sessionAttributes,omitempty"`
 	Response          `json:"response"`
 }
 
 type OutputSpeech struct {
 	Type string `json:"type"`
-	Text string `json:"text"`
+	Text string `json:"text,omitempty"`
+	SSML string `json:"ssml,omitempty"`
 }
 type Reprompt struct {
-	OutputSpeech `json:"outputSpeech"`
+	OutputSpeech *OutputSpeech `json:"outputSpeech,omitempty"`
 }
 
 type Directive struct {
@@ -37,9 +38,9 @@ type Card struct {
 }
 
 type Response struct {
-	OutputSpeech     `json:"outputSpeech"`
-	Card             `json:"card"`
-	Reprompt         `json:"reprompt"`
-	Directives       []Directive `json:"directives"`
-	ShouldEndSession bool        `json:"shouldEndSession"`
+	OutputSpeech     *OutputSpeech `json:"outputSpeech,omitempty"`
+	Card             *Card         `json:"card,omitempty"`
+	Reprompt         *Reprompt     `json:"reprompt,omitempty"`
+	Directives       []Directive   `json:"directives,omitempty"`
+	ShouldEndSession bool          `json:"shouldEndSession"`
 }

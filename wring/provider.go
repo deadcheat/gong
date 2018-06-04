@@ -21,5 +21,5 @@ func (p *Provider) Provide(req types.AlexaRequest) (interfaces.Handler, error) {
 	case values.TypeSessionEndedRequest:
 		return &SessionEndedHandler{}, nil
 	}
-	return nil, nil
+	return &UnknownHandler{}, nil
 }

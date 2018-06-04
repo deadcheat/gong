@@ -15,3 +15,12 @@ const (
 	// IntentGongRing const value of request.intent.name
 	IntentGongRing = "GongRing"
 )
+
+const (
+	TypePlainText = "PlainText"
+	TypeSSML      = "SSML"
+)
+
+const (
+	EnvKeyURL = "GONG_MP3_URL"
+)

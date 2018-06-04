@@ -8,12 +8,12 @@ import (
 
 type MainHandler struct{}
 
-func (h *MainHandler) Handle(req types.AlexaRequest) *types.AlexaResponse {
+func (h *MainHandler) Handle(req types.AlexaRequest) (types.AlexaResponse, error) {
 	inner, _ := wring.New().Provide(req)
 	return inner.Handle(req)
 }
 
 func main() {
 	h := &MainHandler{}
-	lambda.Start(h)
+	lambda.Start(h.Handle)
 }
