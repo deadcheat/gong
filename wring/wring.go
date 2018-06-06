@@ -32,12 +32,12 @@ func (h *HelpIntentHandler) Handle(req types.AlexaRequest) (types.AlexaResponse,
 		Response: types.Response{
 			OutputSpeech: &types.OutputSpeech{
 				Type: values.TypePlainText,
-				Text: "ゴング、や、開始、などのように言っていただければゴングを鳴らします",
+				Text: "ゴングを鳴らすには、ゴング、や、開始、などのように合図してみてください。",
 			},
 			Reprompt: &types.Reprompt{
 				OutputSpeech: &types.OutputSpeech{
 					Type: values.TypePlainText,
-					Text: "ゴング、や、開始、などのように言っていただければゴングを鳴らします",
+					Text: "ゴングを鳴らすには、ゴング、や、開始、などのように合図してみてください。",
 				},
 			},
 			ShouldEndSession: false,
@@ -58,7 +58,7 @@ func (h *LaunchHandler) Handle(req types.AlexaRequest) (types.AlexaResponse, err
 			Reprompt: &types.Reprompt{
 				OutputSpeech: &types.OutputSpeech{
 					Type: values.TypePlainText,
-					Text: "ゴング、や、開始、などのように言っていただければゴングを鳴らします",
+					Text: "ゴングを鳴らすには、ゴング、や、開始、などのように合図してください。",
 				},
 			},
 			ShouldEndSession: false,
@@ -74,7 +74,7 @@ func (h *SessionEndedHandler) Handle(req types.AlexaRequest) (types.AlexaRespons
 		Response: types.Response{
 			OutputSpeech: &types.OutputSpeech{
 				Type: values.TypePlainText,
-				Text: "またどうぞ",
+				Text: "またゴングを鳴らしたくなったら呼んでください",
 			},
 			ShouldEndSession: true,
 		},
@@ -89,12 +89,12 @@ func (h *UnknownHandler) Handle(req types.AlexaRequest) (types.AlexaResponse, er
 		Response: types.Response{
 			OutputSpeech: &types.OutputSpeech{
 				Type: values.TypePlainText,
-				Text: "申し訳ありません、聞き取れませんでした",
+				Text: "申し訳ありません、聞き取れませんでした。ゴング、や、開始、などのように話しかけてみてください。",
 			},
 			Reprompt: &types.Reprompt{
 				OutputSpeech: &types.OutputSpeech{
 					Type: values.TypePlainText,
-					Text: "ゴング、や、開始、などのように言っていただければゴングを鳴らします",
+					Text: "ゴングを鳴らすには、ゴング、や、開始、などのように話しかけてみてください。",
 				},
 			},
 			ShouldEndSession: false,
