@@ -32,12 +32,12 @@ func (h *HelpIntentHandler) Handle(req types.AlexaRequest) (types.AlexaResponse,
 		Response: types.Response{
 			OutputSpeech: &types.OutputSpeech{
 				Type: values.TypePlainText,
-				Text: "ゴングを鳴らすには、ゴング、や、開始、などのように合図してみてください。",
+				Text: "このスキルは、合図を元にプロレスのゴングを鳴らすことができます。ゴングを鳴らすには、ゴング、や、開始、などのように合図してみてください。",
 			},
 			Reprompt: &types.Reprompt{
 				OutputSpeech: &types.OutputSpeech{
 					Type: values.TypePlainText,
-					Text: "ゴングを鳴らすには、ゴング、や、開始、などのように合図してみてください。",
+					Text: "このスキルは、合図を元にプロレスのゴングを鳴らすことができます。ゴングを鳴らすには、ゴング、や、開始、などのように合図してみてください。",
 				},
 			},
 			ShouldEndSession: false,
