@@ -2,14 +2,14 @@ package main
 
 import (
 	"github.com/aws/aws-lambda-go/lambda"
+	"github.com/deadcheat/gong/ringbell"
 	"github.com/deadcheat/gong/types"
-	"github.com/deadcheat/gong/wring"
 )
 
 type MainHandler struct{}
 
 func (h *MainHandler) Handle(req types.AlexaRequest) (types.AlexaResponse, error) {
-	inner, _ := wring.New().Provide(req)
+	inner, _ := ringbell.New().Provide(req)
 	return inner.Handle(req)
 }
 

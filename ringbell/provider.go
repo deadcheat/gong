@@ -1,4 +1,4 @@
-package wring
+package ringbell
 
 import (
 	"github.com/deadcheat/gong/interfaces"
